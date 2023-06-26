@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%; 
+    /* take full with of the body container */
+
+    min-height: 100vh;
+
+    /* Take full height of the body container */
+
+    background: linear-gradient(135deg, #153277, #4e085f);
+    
+    padding: 10px;
+    /* Add padding on all sides of container */
+}
+
+.todo-app{
+    width: 100%;
+    /* cover whole width of the container */
+    
+    max-width: 540px;
+    /* set max width of todo-app div to 540px */
+
+    background: white;
+
+    margin: 100px auto 20px;
+    /* align todo div in center of the container */
+
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo-app h2{
+    color: #002765;
+    /* changes the color of h2 text */
+
+    display: flex;
+    /* get items in one row */
+
+    align-items: center;
+    /* center text and items */
+
+    margin-bottom: 20px;
+
+    gap: 20px;
+    /* gap between h2 and image */
+
+    padding: 0 155px;
+}
+
+.todo-app h2 img{
+    width: 35px;
+    height: 35px;
+    /* resize the image to 35px */
+}
+
+.row{
+    display: flex;
+    /* display flex to assign the justify content center */
+
+    align-items: center;
+
+    justify-content: space-between;
+    /* justify content space between input and button */
+
+    background: #edeef0;
+    /* add background color to the element */
+
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input{
+    flex: 1;
+    /* grow space of input field till add button */
+
+    border: none;
+    /* remove the border of input field to show show style background */
+
+    outline: none;
+    /* remove the outline while input is highlighted */
+
+    background: transparent;
+    /* transparent the background color to input field to show row style background */
+
+    padding: 10px;
+
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: white;
+    font-size: 16px;
+    border-radius: 40px;
+    cursor: pointer;
+
+    /* change the cursor to the clickable cursor */
+}
+
+ul li{
+    list-style: none;
+    padding: 12px 8px 12px 50px;
+    cursor: pointer;
+    user-select: none;
+    /* if you double-click on some text it will be selected/highlighted. This property can be used to prevent this. */
+
+    position: relative;
+}
+
+
+/* this psuedo element will apply changes before ul */
+ul li::before{
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(./Images/Unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 8px;
+    left: 8px;
+}
+
+ul li.checked{
+color: #555;
+text-decoration: line-through;
+
+}
+
+ul li.checked::before{
+    background-image: url(./Images/checked.png);
+}
+
+ul li span{
+    position: absolute;
+    /* position absolute will put the element outside of the div than we can adjust accordingly */
+
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover{
+    background: #edeef0;
+}
+
